@@ -233,7 +233,13 @@ src="https://www.facebook.com/tr?id=1915889832658491&ev=PageView&noscript=1"
     const waBtn = document.getElementById("waBtn");
     const openDirect = document.getElementById("openDirect");
     waBtn.href = waLink;
-    openDirect.href = waLink;
+
+waBtn.addEventListener("click", function () {
+  if (typeof fbq === "function") {
+    fbq("track", "Lead");
+  }
+});
+
 
     document.getElementById("copyBtn").addEventListener("click", async () => {
       try {
