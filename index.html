@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Más info por WhatsApp</title>
+  <meta name="description" content="Obtené más info por WhatsApp." />
+
+  <style>
+    :root{
+      --bg:#000000;
+      --card:#0b0b0f;
+      --border:rgba(255,255,255,.10);
+      --text:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.65);
+      --shadow: 0 20px 60px rgba(0,0,0,.65);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 50% -20%, rgba(255,255,255,.10), transparent 60%),
+        radial-gradient(900px 500px at 10% 10%, rgba(255,255,255,.06), transparent 55%),
+        radial-gradient(900px 500px at 90% 20%, rgba(255,255,255,.05), transparent 55%),
+        var(--bg);
+      color:var(--text);
+    }
+    .wrap{
+      width:min(980px, 92vw);
+      padding:28px 0;
+    }
+    .top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      margin-bottom:18px;
+      opacity:.92;
+    }
+    .brand{
+      font-weight:600;
+      letter-spacing:.2px;
+      font-size:14px;
+      color:var(--muted);
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:999px;
+      background:linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.25));
+      box-shadow:0 0 18px rgba(255,255,255,.25);
+    }
+    .card{
+      position:relative;
+      border-radius:22px;
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .card::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:radial-gradient(600px 180px at 50% 0%, rgba(255,255,255,.10), transparent 60%);
+      pointer-events:none;
+    }
+    .inner{
+      position:relative;
+      padding:42px 26px;
+      display:grid;
+      gap:18px;
+      text-align:center;
+    }
+    h1{
+      margin:0;
+      font-size: clamp(28px, 3.8vw, 44px);
+      letter-spacing:-.02em;
+    }
+    p{
+      margin:0 auto;
+      max-width: 52ch;
+      font-size: clamp(14px, 1.6vw, 16px);
+      color:var(--muted);
+      line-height:1.55;
+    }
+
+    /* "Cartel" */
+    .sign{
+      margin: 12px auto 6px;
+      width:min(720px, 92%);
+      padding:18px 18px;
+      border-radius:18px;
+      background:rgba(0,0,0,.55);
+      border:1px solid rgba(255,255,255,.14);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 14px 40px rgba(0,0,0,.55);
+    }
+    .sign strong{
+      display:block;
+      font-size: clamp(16px, 2vw, 18px);
+      letter-spacing:.2px;
+      color:rgba(255,255,255,.95);
+    }
+    .sign span{
+      display:block;
+      margin-top:6px;
+      font-size:13px;
+      color:rgba(255,255,255,.62);
+    }
+
+    .actions{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+    .btn{
+      appearance:none;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(255,255,255,.08);
+      color:rgba(255,255,255,.92);
+      padding:14px 18px;
+      border-radius:16px;
+      font-weight:600;
+      letter-spacing:.2px;
+      cursor:pointer;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      min-width: 220px;
+      justify-content:center;
+    }
+    .btn:hover{ transform: translateY(-1px); background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.22); }
+    .btn:active{ transform: translateY(0px) scale(.99); }
+    .btn.primary{
+      background: rgba(255,255,255,.92);
+      color:#000;
+      border-color: rgba(255,255,255,.92);
+    }
+    .btn.primary:hover{ background:#fff; border-color:#fff; }
+
+    .fine{
+      margin-top:14px;
+      font-size:12px;
+      color:rgba(255,255,255,.45);
+    }
+    .icon{
+      width:18px; height:18px; display:inline-block;
+    }
+    .footer{
+      margin-top:14px;
+      display:flex;
+      justify-content:center;
+      font-size:12px;
+      color:rgba(255,255,255,.40);
+    }
+    .footer a{ color:rgba(255,255,255,.55); text-decoration:none; }
+    .footer a:hover{ text-decoration:underline; }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <div class="top">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Atención rápida</span>
+      </div>
+      <div style="color:rgba(255,255,255,.45); font-size:12px;">Disponible por WhatsApp</div>
+    </div>
+
+    <section class="card">
+      <div class="inner">
+        <h1>Obtené más info en WhatsApp</h1>
+        <p>Hacé click en el botón y escribinos. Te respondemos con precios, stock, envíos y detalles.</p>
+
+        <div class="sign" role="note" aria-label="Cartel informativo">
+          <strong>📲 Escribinos por WhatsApp para más información</strong>
+          <span>Respuesta rápida • Simple • Directo</span>
+        </div>
+
+        <div class="actions">
+          <a class="btn primary" id="waBtn" href="#" rel="noopener">
+            <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
+              <path d="M19.11 17.62c-.25-.13-1.46-.72-1.68-.8-.23-.08-.4-.13-.57.13-.17.25-.65.8-.8.97-.15.17-.3.19-.55.06-.25-.13-1.06-.39-2.02-1.23-.75-.67-1.25-1.5-1.4-1.75-.15-.25-.02-.38.11-.5.12-.12.25-.3.38-.44.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.44-.06-.13-.57-1.36-.78-1.86-.2-.48-.41-.42-.57-.43h-.49c-.17 0-.44.06-.67.32-.23.25-.88.86-.88 2.1 0 1.23.9 2.43 1.03 2.6.13.17 1.77 2.7 4.29 3.78.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.46-.6 1.67-1.17.21-.57.21-1.06.15-1.17-.06-.1-.23-.17-.48-.3z" fill="currentColor"/>
+              <path d="M27.16 4.84A14.95 14.95 0 0 0 16.01 0C7.73 0 1 6.73 1 15.01c0 2.64.69 5.21 2.01 7.48L.87 31.13l8.85-2.06A14.9 14.9 0 0 0 16 30.02c8.28 0 15.01-6.73 15.01-15.01 0-4.01-1.56-7.78-3.85-10.17zm-11.15 22.6c-2.36 0-4.68-.64-6.7-1.85l-.48-.29-5.24 1.22 1.15-5.1-.31-.52a12.4 12.4 0 0 1-1.9-6.39c0-6.84 5.56-12.4 12.4-12.4 3.31 0 6.42 1.29 8.76 3.63a12.32 12.32 0 0 1 3.64 8.77c0 6.84-5.56 12.4-12.4 12.4z" fill="currentColor"/>
+            </svg>
+            Hablar por WhatsApp
+          </a>
+
+          <button class="btn" id="copyBtn" type="button">Copiar mensaje</button>
+        </div>
+
+        <div class="fine">Tip: el botón abre WhatsApp con un mensaje ya escrito.</div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <span>Hecho en negro estilo minimal • <a href="#" id="openDirect">Abrir link directo</a></span>
+    </div>
+  </main>
+
+  <script>
+    // ✅ Cambiá este número por el tuyo:
+    const phone = "549261XXXXXXXX"; // ejemplo: 5492611234567
+
+    // ✅ Mensaje que aparece pre-escrito:
+    const message = "Hola! Quiero más info. ¿Me pasás precios y disponibilidad?";
+
+    const waLink = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+    const waBtn = document.getElementById("waBtn");
+    const openDirect = document.getElementById("openDirect");
+    waBtn.href = waLink;
+    openDirect.href = waLink;
+
+    document.getElementById("copyBtn").addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(message);
+        alert("Mensaje copiado ✅ Pegalo en WhatsApp si querés.");
+      } catch {
+        // fallback
+        const ta = document.createElement("textarea");
+        ta.value = message;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        ta.remove();
+        alert("Mensaje copiado ✅");
+      }
+    });
+  </script>
+</body>
+</html>
